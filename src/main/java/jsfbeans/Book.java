@@ -11,7 +11,7 @@ public class Book {
 	private String name;
 	private String publishDate;
 	private String price;
-	private String[] emailAdresses;
+	private String[] emailAddresses;
 	public String getAuthor() {
 		return author;
 	}
@@ -36,11 +36,11 @@ public class Book {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public String[] getEmailAdresses() {
-		return emailAdresses;
+	public String[] getEmailAddresses() {
+		return emailAddresses;
 	}
-	public void setEmailAdresses(String[] emailAdresses) {
-		this.emailAdresses = emailAdresses;
+	public void setEmailAddresses(String[] emailAddresses) {
+		this.emailAddresses = emailAddresses;
 	}
 	
 	public String save() {
