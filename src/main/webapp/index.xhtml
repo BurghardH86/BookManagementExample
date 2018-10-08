@@ -22,7 +22,7 @@
 		<h:inputText value="#{book.price}"/>
 		
 		<h:outputText value="Abteilungen, die benachrichtigt werden"/>
-		<h:selectManyListbox value="#{book.emailAddresses}" >
+		<h:selectManyListbox value="#{book.emailAddresses}" valueChangeListener="#{book.emailAddressChanged}" >
 			<f:selectItem itemValue="abteilung1@mycompany.de" itemLabel="Abteilung 1"/>
 			<f:selectItem itemValue="abteilung2@mycompany.de" itemLabel="Abteilung 2"/>		
 		</h:selectManyListbox>
