@@ -27,7 +27,7 @@
 			<f:selectItem itemValue="abteilung2@mycompany.de" itemLabel="Abteilung 2"/>		
 		</h:selectManyListbox>
 	</h:panelGrid>
-	<h:commandButton value="Abspeichern" action="#{book.save}"/>
+	<h:commandButton value="Abspeichern" action="#{book.save}" actionListener="#{book.saveListener}"/>
 </h:form>
 </f:view>
 </body>

@@ -1,5 +1,7 @@
 package jsfbeans;
 
+import java.awt.event.ActionEvent;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -46,6 +48,10 @@ public class Book {
 	public String save() {
 		//TODO: Abspeichern
 		return "index";
+	}
+	
+	public void saveListener(ActionEvent e) {
+		System.out.println("Abteilungen benachrichtigen: " + java.util.Arrays.toString(this.emailAddresses));
 	}
 
 }
