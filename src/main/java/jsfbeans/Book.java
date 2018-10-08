@@ -1,5 +1,10 @@
 package jsfbeans;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean
+@RequestScoped
 public class Book {
 	
 	private String author;
