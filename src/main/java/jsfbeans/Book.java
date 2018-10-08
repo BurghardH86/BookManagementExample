@@ -1,9 +1,8 @@
 package jsfbeans;
 
-import java.awt.event.ActionEvent;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.event.ActionEvent;
 
 @ManagedBean
 @RequestScoped
