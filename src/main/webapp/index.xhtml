@@ -19,9 +19,9 @@
 		<h:inputText value="#{book.publishDate}"/>
 		
 		<h:outputText value="Sprache"/>
-		<h:selectOneListbox value="#{book.language}"/>
-		<f:selectItems value="#{book.languages}"/>
-		
+		<h:selectOneListbox value="#{book.language}">
+			<f:selectItems value="#{book.languages}"/>
+		</h:selectOneListbox>
 		<h:outputText value="Preis"/>
 		<h:inputText value="#{book.price}"/>
 		
