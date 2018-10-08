@@ -42,5 +42,10 @@ public class Book {
 	public void setEmailAdresses(String[] emailAdresses) {
 		this.emailAdresses = emailAdresses;
 	}
+	
+	public String save() {
+		//TODO: Abspeichern
+		return "index";
+	}
 
 }
