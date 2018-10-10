@@ -6,11 +6,24 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:t="http://java.sun.com/jsf/facelets">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title><t:insert name="pagetitle">Buchverwaltung</t:insert></title>
+<link href="#{request.contextPath}/css/style.css" type="text/css" rel="stylesheet"/>
 </h:head>
 <body>
 <f:view>
-
+	<div id="header">
+	<t:insert name="pagetitle">Buchverwaltung</t:insert>	
+	</div>
+	<div id="content">
+	<t:insert name="content"> TODO </t:insert>
+	</div>
+	<div id="footer">
+	<t:insert name="footer">JSF Demoapplikation 
+		<h:outputText value="#{session.lastAccessedTime}">
+			<f:convertDateTime timeStyle="full" type="time"/>
+		</h:outputText>
+	</t:insert>
+	</div>
 </f:view>
 </body>
 </html>
