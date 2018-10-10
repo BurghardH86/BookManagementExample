@@ -101,7 +101,7 @@ public class Book {
 			
 		} 
 		else {
-			specialMessage = "Test";
+			specialMessage = "";
 		}
 	}
 
