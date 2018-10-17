@@ -5,30 +5,30 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 
 <t:composition template="/WEB-INF/templates/standardtemplate.xhtml">
 	
-<t:define name="pagetitle">Bucherfassung</t:define>
+<t:define name="pagetitle">#{msg['create.title']}</t:define>
 <t:define name="content">
 	<f:view>
 	<h:form>
 		<h:panelGrid columns="2">
-			<h:outputText value="Autor"/>
+			<h:outputText value="#{msg['create.author']}"/>
 			<h:inputText value="#{book.author}"/>
 			
-			<h:outputText value="Titel"/>
+			<h:outputText value="#{msg['create.name']}"/>
 			<h:inputText value="#{book.name}"/>
 			
-			<h:outputText value="Erscheinungsdatum"/>
+			<h:outputText value="#{msg['create.publishDate']}"/>
 			<h:inputText value="#{book.publishDate}"/>
 			
-			<h:outputText value="Sprache"/>
+			<h:outputText value="#{msg['create.language']}"/>
 			<h:selectOneListbox value="#{book.language}">
 				<f:selectItems value="#{book.languages}"/>
 				<f:valueChangeListener type="jsfbeans.LanguageValueChangeListener"/>				
 			</h:selectOneListbox>
 			
-			<h:outputText value="Preis"/>
+			<h:outputText value="#{msg['create.price']}"/>
 			<h:inputText value="#{book.price}"/>
 			
-			<h:outputText value="Abteilungen, die benachrichtigt werden"/>
+			<h:outputText value="#{msg['create.departments']}"/>
 			<h:selectManyListbox value="#{book.emailAddresses}" valueChangeListener="#{book.emailAddressChanged}" >
 				<f:selectItem itemValue="abteilung1@mycompany.de" itemLabel="Abteilung 1"/>
 				<f:selectItem itemValue="abteilung2@mycompany.de" itemLabel="Abteilung 2"/>
@@ -36,7 +36,7 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			</h:selectManyListbox>
 		</h:panelGrid>		
 		<h:outputText value="#{book.specialMessage}" id="sm"/> <br/>		
-		<h:commandButton value="Abspeichern" action="#{book.save}" actionListener="#{book.saveListener}"/>
+		<h:commandButton value="#{msg['create.save']}" action="#{book.save}" actionListener="#{book.saveListener}"/>
 	</h:form>
 	</f:view>
 </t:define>
