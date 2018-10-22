@@ -90,4 +90,11 @@ public class BookShelf implements Serializable{
 				
 				return "index";
 			}
+			
+			public String deleteBook(Book book) {
+				rawBooks.remove(book);
+				booksDataModel = new ListDataModel<Book>(rawBooks);				
+				
+				return "delete";
+			}
 }
