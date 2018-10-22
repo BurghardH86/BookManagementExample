@@ -30,7 +30,9 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			<h:message for="bookLanguage" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.price']}"/>
-			<h:inputText id="bookPrice" value="#{book.price}"/>
+			<h:inputText id="bookPrice" value="#{book.price}">
+				<f:convertNumber type="currency" currencyCode="EUR"/>
+			</h:inputText>
 			<h:message for="bookPrice" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.departments']}"/>
