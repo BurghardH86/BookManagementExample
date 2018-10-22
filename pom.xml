@@ -18,7 +18,7 @@
             </plugin>
         </plugins>
 
-        <finalName>jsfdemo</finalName>
+        <finalName>Buchverwaltung</finalName>
     </build>
 
     <dependencies>
