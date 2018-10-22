@@ -52,5 +52,20 @@ public class BookShelf implements Serializable{
         		   booksDataModel = new ListDataModel<Book>(books);
 
         	   return booksDataModel;
-           }   
+           }
+           
+           private Book inedit;
+           
+           public String prepareNewBook() {
+        	   inedit = new Book();
+        	   return "create";
+           }
+
+			public Book getInedit() {
+				return inedit;
+			}
+	
+			public void setInedit(Book inedit) {
+				this.inedit = inedit;
+			}  
 }
