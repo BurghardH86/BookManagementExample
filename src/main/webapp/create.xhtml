@@ -52,8 +52,8 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			<h:message for="bookEmailaddresses" styleClass="errorMessage"/>
 			
 		</h:panelGrid>		
-		<h:outputText value="#{book.specialMessage}" id="sm"/> <br/>		
-		<h:commandButton value="#{msg['create.save']}" action="#{bookShelf.inedit.save}" actionListener="#{book.saveListener}"/>
+		<h:outputText value="#{bookShelf.inedit.specialMessage}" id="sm"/> <br/>		
+		<h:commandButton value="#{msg['create.save']}" action="#{bookShelf.inedit.save}"/>
 	</h:form>
 	</f:view>
 </t:define>

@@ -3,6 +3,7 @@ package jsfbeans;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -47,9 +48,14 @@ public class BookShelf implements Serializable{
            transient
            private DataModel<Book> booksDataModel;
            
+           private List<Book> rawBooks;
+           
            public DataModel<Book> getBooks() {
-        	   if (booksDataModel == null)
-        		   booksDataModel = new ListDataModel<Book>(books);
+        	   if (booksDataModel == null) {
+        		   rawBooks = new ArrayList<Book>();
+        	   	   rawBooks.addAll(books);
+        		   booksDataModel = new ListDataModel<Book>(rawBooks);
+        	   }        		   
 
         	   return booksDataModel;
            }
@@ -68,4 +74,14 @@ public class BookShelf implements Serializable{
 			public void setInedit(Book inedit) {
 				this.inedit = inedit;
 			}  
+			
+			public String saveBook() {
+				if (!rawBooks.contains(inedit)) {
+					rawBooks.add(inedit);
+					booksDataModel = new ListDataModel<Book>(rawBooks);
+				}				
+				inedit = null;
+				
+				return "index";
+			}
 }
