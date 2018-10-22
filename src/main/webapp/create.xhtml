@@ -15,7 +15,11 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			<h:message for="bookAuthor" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.name']}"/>
-			<h:inputText id="bookTitle" value="#{book.name}" required="true" requiredMessage="Bitte Name des Buches angeben!"/>
+			<h:inputText id="bookTitle" value="#{book.name}" required="true" 
+			requiredMessage="Bitte Name des Buches angeben!" 
+			validatorMessage="Der Titel des Buches muss mindestens 5 und höchsten 50 Zeichen beinhalten!">
+				<f:validateLength minimum="5" maximum="50"/>
+			</h:inputText>
 			<h:message for="bookTitle" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.publishDate']}"/>
