@@ -19,7 +19,9 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			<h:message for="bookTitle" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.publishDate']}"/>
-			<h:inputText id="bookpublishDate" value="#{book.publishDate}"/>
+			<h:inputText id="bookpublishDate" value="#{book.publishDate}">
+				<f:convertDateTime pattern="dd-MM-yyyy"/>
+			</h:inputText>
 			<h:message for="bookpublishDate" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.language']}"/>
