@@ -11,13 +11,13 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 	<h:form>
 		<h:panelGrid columns="3">
 			<h:outputText value="#{msg['create.author']}"/>
-			<h:inputText id="bookAuthor" value="#{book.author}" required="true" requiredMessage="Bitte Autor des Buches angeben!">
+			<h:inputText id="bookAuthor" value="#{bookShelf.inedit.author}" required="true" requiredMessage="Bitte Autor des Buches angeben!">
 				<f:validator validatorId="vornameNachnameValidator"/>
 			</h:inputText>
 			<h:message for="bookAuthor" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.name']}"/>
-			<h:inputText id="bookTitle" value="#{book.name}" required="true" 
+			<h:inputText id="bookTitle" value="#{bookShelf.inedit.name}" required="true" 
 			requiredMessage="Bitte Name des Buches angeben!" 
 			validatorMessage="Der Titel des Buches muss mindestens 5 und höchsten 50 Zeichen beinhalten!">
 				<f:validateLength minimum="5" maximum="50"/>
@@ -25,35 +25,35 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			<h:message for="bookTitle" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.publishDate']}"/>
-			<h:inputText id="bookpublishDate" value="#{book.publishDate}">
+			<h:inputText id="bookpublishDate" value="#{bookShelf.inedit.publishDate}">
 				<f:convertDateTime pattern="dd-MM-yyyy"/>
 			</h:inputText>
 			<h:message for="bookpublishDate" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.language']}"/>
-			<h:selectOneListbox id="bookLanguage" value="#{book.language}">
+			<h:selectOneListbox id="bookLanguage" value="#{bookShelf.inedit.language}">
 				<f:selectItems value="#{book.languages}"/>
 				<f:valueChangeListener type="jsfbeans.LanguageValueChangeListener"/>				
 			</h:selectOneListbox>
 			<h:message for="bookLanguage" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.price']}"/>
-			<h:inputText id="bookPrice" value="#{book.price}" converterMessage="Der Preis muss mit EUR 9,99 z.B. angegeben werden.">
+			<h:inputText id="bookPrice" value="#{bookShelf.inedit.price}" converterMessage="Der Preis muss mit EUR 9,99 z.B. angegeben werden.">
 				<f:convertNumber type="currency" currencyCode="EUR"/>
 			</h:inputText>
 			<h:message for="bookPrice" styleClass="errorMessage"/>
 			
 			<h:outputText value="#{msg['create.departments']}"/>
-			<h:selectManyListbox id="bookEmailaddresses" value="#{book.emailAddresses}" valueChangeListener="#{book.emailAddressChanged}" >
+			<h:selectManyListbox id="bookEmailaddresses" value="#{bookShelf.inedit.emailAddresses}" valueChangeListener="#{bookShelf.inedit.emailAddressChanged}" >
 				<f:selectItem itemValue="abteilung1@mycompany.de" itemLabel="Abteilung 1"/>
 				<f:selectItem itemValue="abteilung2@mycompany.de" itemLabel="Abteilung 2"/>
-				<f:ajax event="valueChange" listener="#{book.emailAddressChangedAjax}" render="sm"></f:ajax>		
+				<f:ajax event="valueChange" listener="#{bookShelf.inedit.emailAddressChangedAjax}" render="sm"></f:ajax>		
 			</h:selectManyListbox>
 			<h:message for="bookEmailaddresses" styleClass="errorMessage"/>
 			
 		</h:panelGrid>		
 		<h:outputText value="#{book.specialMessage}" id="sm"/> <br/>		
-		<h:commandButton value="#{msg['create.save']}" action="#{book.save}" actionListener="#{book.saveListener}"/>
+		<h:commandButton value="#{msg['create.save']}" action="#{bookShelf.inedit.save}" actionListener="#{book.saveListener}"/>
 	</h:form>
 	</f:view>
 </t:define>
