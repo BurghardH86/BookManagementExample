@@ -66,6 +66,11 @@ public class BookShelf implements Serializable{
         	   inedit = new Book();
         	   return "create";
            }
+           
+           public String prepareBookEdit(Book book) {
+        	   inedit = book;
+        	   return "create";
+           }
 
 			public Book getInedit() {
 				return inedit;
