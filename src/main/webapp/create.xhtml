@@ -53,7 +53,7 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 			
 		</h:panelGrid>		
 		<h:outputText value="#{bookShelf.inedit.specialMessage}" id="sm"/> <br/>		
-		<h:commandButton value="#{msg['create.save']}" action="#{bookShelf.inedit.save}"/>
+		<h:commandButton value="#{msg['create.save']}" action="#{bookShelf.saveBook}"/>
 	</h:form>
 	</f:view>
 </t:define>
