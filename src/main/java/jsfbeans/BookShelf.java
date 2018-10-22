@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 	
+@SuppressWarnings("deprecation")
 @ManagedBean
 @SessionScoped
 
@@ -69,7 +70,7 @@ public class BookShelf implements Serializable{
            
            public String prepareBookEdit(Book book) {
         	   inedit = book;
-        	   return "create";
+        	   return "update";
            }
 
 			public Book getInedit() {

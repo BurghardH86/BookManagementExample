@@ -42,9 +42,10 @@ xmlns:t="http://java.sun.com/jsf/facelets">
 	
 	<h:column>
 	<f:facet name="header">#{msg['index.actions']}</f:facet>
-	XXX	
-	</h:column>
-	
+	<h:form>
+		<h:commandButton value="Editieren" action="#{bookShelf.prepareBookEdit(onebook)}"/>
+	</h:form>	
+	</h:column>	
 	
 	</h:dataTable>
 	<h:form>
