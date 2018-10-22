@@ -18,7 +18,7 @@ public class Book {
 	
 	private String publishDate;
 	
-	private String price;
+	private Double price;
 	
 	private String[] emailAddresses;
 	
@@ -69,10 +69,10 @@ public class Book {
 	public void setPublishDate(String publishDate) {
 		this.publishDate = publishDate;
 	}
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String[] getEmailAddresses() {
