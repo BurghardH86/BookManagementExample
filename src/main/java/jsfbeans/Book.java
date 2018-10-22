@@ -84,7 +84,7 @@ public class Book {
 	
 	public String save() {
 		//TODO: Abspeichern
-		return "index";
+		return "create";
 	}
 	
 	public void saveListener(ActionEvent e) {
